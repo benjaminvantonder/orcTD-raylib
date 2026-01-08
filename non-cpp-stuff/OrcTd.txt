@@ -1,0 +1,3 @@
+Basies hierdie games gaan n recreation wees van ORCTD of my github
+
+g++ main.cpp movement.cpp -o game.exe -Iinclude -Llib -lraylib -lopengl32 -lgdi32 -lwinmm

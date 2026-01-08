@@ -1,0 +1,215 @@
+Great — let’s build this **cleanly and correctly**, step by step, in a way that fits **raylib**, avoids technical debt, and stays simple.
+
+Below is a **minimal but solid TextureManager** you can drop into a small engine or game.
+
+---
+
+## Goal recap
+
+You want:
+
+* Text file defines textures
+* One place to load them
+* One place to unload them
+* Access textures by string ID
+* No reliance on C++ variable names
+* Compatible with `UnloadTexture(Texture2D)`
+
+✔️ This design does exactly that.
+
+---
+
+## 1️⃣ `textures.txt` (data-driven)
+
+```txt
+orc assets/orc.png
+goblin assets/goblin.png
+wall assets/wall.png
+```
+
+Format:
+
+```
+<ID> <PATH>
+```
+
+---
+
+## 2️⃣ TextureManager.h
+
+```cpp
+#pragma once
+
+#include <unordered_map>
+#include <string>
+#include "raylib.h"
+
+class TextureManager
+{
+public:
+    void LoadFromFile(const std::string& filename);
+    Texture2D& Get(const std::string& id);
+    void UnloadAll();
+
+private:
+    std::unordered_map<std::string, Texture2D> textures;
+};
+```
+
+---
+
+## 3️⃣ TextureManager.cpp
+
+```cpp
+#include "TextureManager.h"
+#include <fstream>
+#include <stdexcept>
+
+void TextureManager::LoadFromFile(const std::string& filename)
+{
+    std::ifstream file(filename);
+    std::string id, path;
+
+    if (!file.is_open())
+        throw std::runtime_error("Failed to open texture file");
+
+    while (file >> id >> path)
+    {
+        textures[id] = LoadTexture(path.c_str());
+    }
+}
+
+Texture2D& TextureManager::Get(const std::string& id)
+{
+    auto it = textures.find(id);
+    if (it == textures.end())
+        throw std::runtime_error("Texture not found: " + id);
+
+    return it->second;
+}
+
+void TextureManager::UnloadAll()
+{
+    for (auto& [id, texture] : textures)
+    {
+        UnloadTexture(texture);
+    }
+    textures.clear();
+}
+```
+
+---
+
+## 4️⃣ Usage in `main.cpp`
+
+```cpp
+#include "TextureManager.h"
+
+int main()
+{
+    InitWindow(800, 600, "Texture Manager Example");
+
+    TextureManager textures;
+    textures.LoadFromFile("textures.txt");
+
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+        ClearBackground(RAYWHITE);
+
+        DrawTexture(textures.Get("orc"), 100, 100, WHITE);
+
+        EndDrawing();
+    }
+
+    textures.UnloadAll();
+    CloseWindow();
+}
+```
+
+---
+
+## Why this is a GOOD design
+
+### ✔ Data-driven
+
+Add a texture → edit `textures.txt` only
+
+### ✔ Centralized lifetime management
+
+One load function
+One unload function
+
+### ✔ No globals
+
+No `Texture2D orcTexture;` clutter
+
+### ✔ raylib-safe
+
+Uses `Texture2D` directly
+Calls `UnloadTexture` correctly
+
+---
+
+## Important raylib detail (worth knowing)
+
+`Texture2D` is a **struct** holding:
+
+* OpenGL texture ID
+* width / height
+* format
+
+Copying it is *cheap*, but:
+
+* **Unloading twice is catastrophic**
+
+That’s why:
+
+* We store **one instance**
+* We unload exactly once
+* We clear the map afterward
+
+---
+
+## Optional upgrades (next steps)
+
+If you want to level this up further:
+
+### 🔹 Prevent duplicate loads
+
+```cpp
+if (textures.contains(id)) continue;
+```
+
+### 🔹 Hot reload (dev mode)
+
+Reload textures when file changes
+
+### 🔹 Reference counting
+
+Only unload when no systems use it
+
+### 🔹 Texture groups
+
+```txt
+ui button assets/ui/button.png
+```
+
+---
+
+## Final mental model (important)
+
+> **Text files describe assets**
+> **C++ manages memory & lifetime**
+> **Strings identify, not variables**
+
+You’re thinking like an engine programmer now — this is exactly how you avoid technical debt.
+
+If you want, next we can:
+
+* Add sound / music managers
+* Build a unified `AssetManager`
+* Add compile-time safety on IDs
+* Discuss ECS-friendly usage
+
+Just tell me what you want next.

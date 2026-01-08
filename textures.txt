@@ -1,0 +1,4 @@
+orc assets/orc.png
+battleground assets/battleground.png
+castle-active assets/Castle active.png
+castle-unactive assets/Castle unactive.png
