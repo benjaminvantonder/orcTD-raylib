@@ -1,14 +1,12 @@
 #ifndef ORCTEXTURES_H
-
-extern Image orcStillImage;
-extern Image orcActiveImage;
+#define ORCTEXTURES_H
 
 extern Texture orcStillTexture;
 extern Texture orcActiveTexture;
 
-extern Rectangle orcRect;
-
-void LoadOrcTextures();
-void DrawOrcTextures();
+void SpawnOrc(Vector2 startPos);
+void initOrcs();
+void UpdateOrcs(float dt);
+void DrawOrcs();
 
 #endif

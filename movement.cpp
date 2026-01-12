@@ -1,5 +1,6 @@
 #include "main.h"
 #include "movement.h"
+#include "orcTextures.h"
 
 // This file is for handling npc movement
 // This tower defense won't have manual player input for movement

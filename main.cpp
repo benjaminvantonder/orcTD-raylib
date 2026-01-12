@@ -4,6 +4,7 @@
 #include "movement.h"
 #include "towerTextures.h"
 #include "orcTextures.h"
+#include <cmath>
 
 // Single definition of the global tower rectangle
 
@@ -11,49 +12,39 @@ Color transparentColor = Fade(WHITE, 0);
 
 
 
-void unloadAllTextures() {
-
-    for (int i = 0; i < 3; i++) {
-
-
-
-
-    }
-
-}
-
 int main() {
     InitWindow(GetScreenWidth(), GetScreenHeight(), "Raylib Test");
     ToggleBorderlessWindowed();
     SetTargetFPS(60);
 
     LoadTowerTextures();
-    LoadOrcTextures();
+    initOrcs();
+
+    bool orcSpawned = false;
 
     while(!WindowShouldClose()) {
+        float dt = GetFrameTime();
 
-        //we're gonna set the texture of the tower {texture} to the same vector as its rectangle
-
-        // MaximizeWindow();
-
-        BeginDrawing();
-
-        ClearBackground(YELLOW);
-
-        drawTowerTextures();
-
-        DrawOrcTextures();
-
-        EndDrawing();
-
-        if(IsKeyPressed) {
-
-            if(IsKeyDown(KEY_ESCAPE)) {
-                CloseWindow();
-            }
-
+        if(!orcSpawned) {
+            SpawnOrc({
+                (float)GetScreenWidth() - 300,
+                (float)GetScreenHeight() / 2
+            });
+            orcSpawned = true;
         }
 
+        UpdateOrcs(dt);
+
+        BeginDrawing();
+        ClearBackground(YELLOW);
+        drawTowerTextures();
+        DrawOrcs();
+        EndDrawing();
+
+        if(IsKeyPressed(KEY_ESCAPE)) {
+            break;
+
+        }
     }
 
     CloseWindow();

@@ -1,4 +1,5 @@
 #ifndef TOWERTEXTURES_H
+#define TOWERTEXTURES_H
 
 extern Rectangle towerRect;
 extern Color transparentColor;
