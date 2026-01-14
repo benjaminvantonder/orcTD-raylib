@@ -1,11 +1,14 @@
 #include <stdio.h>
+#include <cmath>
+
 #include "raylib.h"
+
 #include "main.h"
 #include "movement.h"
+
 #include "towerTextures.h"
 #include "orcTextures.h"
 #include "menuTextures.h"
-#include <cmath>
 
 // Single definition of the global tower rectangle
 
@@ -13,10 +16,8 @@ Color transparentColor = Fade(WHITE, 0);
 
 int main()
 {
-    // No need to make it borderless
+    // Why make it borderless?
     InitWindow(GetScreenWidth(), GetScreenHeight(), "Raylib Test");
-
-    // InitWindow(400, 500, "Raylib Test");
 
     // Toggle borderless windowed causes flashing when window button is pressed.
     // ToggleBorderlessWindowed();
@@ -26,8 +27,8 @@ int main()
     float dt = GetFrameTime();
 
     loadMainMenu();
-    // LoadTowerTextures();
-    // loadOrcTextures();
+    // loadTowerTextures(); brakes
+    // loadOrcTextures(); brakes
 
     while (!WindowShouldClose())
     {
@@ -35,7 +36,9 @@ int main()
         BeginDrawing();
         ClearBackground(YELLOW);
 
+        // Will add buttons to main game and settings
         drawMainMenu();
+
         // drawTowerTextures();
         // initOrc();
         // drawOrcTextures();
