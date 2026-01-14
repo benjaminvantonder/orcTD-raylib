@@ -1,0 +1,2 @@
+void loadMainMenu();
+void drawMainMenu();

@@ -6,7 +6,8 @@
 
 #define MAX_ORCS 1
 
-typedef struct Orc {
+typedef struct Orc
+{
 
     Vector2 position;
     Vector2 target;
@@ -21,30 +22,29 @@ Orc orc;
 Image orcTextureImage;
 Texture orcTexture;
 
-void initOrc() {
+void initOrc()
+{
 
     orc.position = {
-        truncf(GetScreenWidth() - orcTextureImage.width - 20), //make a small gap between the right side and the orc texture
-        truncf((GetScreenHeight() / 2) - orcTexture.width)
-    };
-
-
+        truncf(GetScreenWidth() - orcTextureImage.width - 20), // make a small gap between the right side and the orc texture
+        truncf((GetScreenHeight() / 2) - orcTexture.width)};
 }
 
-void loadOrcTextures() {
-    orcTextureImage = LoadImage("assets/Orcs/orc-still.png");
+void loadOrcTextures()
+{
+
+    orcTextureImage = LoadImage("./assets/Orcs/orc-still.png");
     UnloadImage(orcTextureImage);
 
     orcTexture = LoadTextureFromImage(orcTextureImage);
 }
 
-void drawOrcTextures() {
+void drawOrcTextures()
+{
 
     DrawTexture(orcTexture, orc.position.x, orc.position.y, WHITE);
 }
 
-void updateOrc() {
-
-
+void updateOrc()
+{
 }
-

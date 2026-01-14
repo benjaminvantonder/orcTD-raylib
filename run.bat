@@ -1,0 +1,3 @@
+g++ main.cpp movement.cpp orcTextures.cpp towerTextures.cpp menuTextures.cpp -o game.exe -Iinclude -Llib -lraylib -lopengl32 -lgdi32 -lwinmm
+game
+exit
