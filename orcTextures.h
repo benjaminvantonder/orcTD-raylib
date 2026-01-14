@@ -4,9 +4,8 @@
 extern Texture orcStillTexture;
 extern Texture orcActiveTexture;
 
-void SpawnOrc(Vector2 startPos);
-void initOrcs();
-void UpdateOrcs(float dt);
-void DrawOrcs();
+void loadOrcTextures();
+void drawOrcTextures();
+void initOrc();
 
 #endif

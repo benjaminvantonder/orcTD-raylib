@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include "raylib.h"
 #include "main.h"
 #include "orcTextures.h"
@@ -8,69 +9,42 @@
 typedef struct Orc {
 
     Vector2 position;
-    Vector2 velocity;
+    Vector2 target;
+    float speed;
     Texture stillTexture;
     Texture activeTexture;
-    bool active;
 
 } Orc;
 
-// Image orcStillImage =
+Orc orc;
 
-Texture orcTexture = LoadTexture("assets/Orcs/orc-still.png");
+Image orcTextureImage;
+Texture orcTexture;
 
-Orc orcs[MAX_ORCS];
+void initOrc() {
 
+    orc.position = {
+        truncf(GetScreenWidth() - orcTextureImage.width - 20), //make a small gap between the right side and the orc texture
+        truncf((GetScreenHeight() / 2) - orcTexture.width)
+    };
 
-void initOrcs() {
-
-    for(int i = 0; i < MAX_ORCS; i++) {
-
-        orcs[i].active = false;
-
-    }
 
 }
 
-void SpawnOrc(Vector2 startPos) {
-    for(int i = 0; i < MAX_ORCS; i++) {
-        if(!orcs[i].active) {
-            orcs[i].active = true;
-            orcs[i].position = startPos;
-            orcs[i].velocity = {
-                100, 0
-            };
-            orcs[i].stillTexture = orcTexture;
-            break;
-        }
-    }
+void loadOrcTextures() {
+    orcTextureImage = LoadImage("assets/Orcs/orc-still.png");
+    UnloadImage(orcTextureImage);
+
+    orcTexture = LoadTextureFromImage(orcTextureImage);
 }
 
-void UpdateOrcs(float dt) { //deltaTime
-    for(int i = 0; i < MAX_ORCS; i++) {
-        if(!orcs[i].active) continue;
+void drawOrcTextures() {
 
-        orcs[i].position.x += orcs[i].velocity.x * dt;
-
-        if(orcs[i].position.x > GetScreenWidth()) {
-            orcs[i].active = false;
-        }
-    }
+    DrawTexture(orcTexture, orc.position.x, orc.position.y, WHITE);
 }
 
-void DrawOrcs() {
+void updateOrc() {
 
-    for(int i = 0; i < MAX_ORCS; i++) {
-        if(!orcs[i].active) continue;
 
-        DrawTexture(orcs[i].stillTexture,
-                    (int)orcs[i].position.x,
-                    (int)orcs[i].position.y,
-                    WHITE);
-    }
 }
-
-
-
-
 

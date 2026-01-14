@@ -10,35 +10,23 @@
 
 Color transparentColor = Fade(WHITE, 0);
 
-
-
 int main() {
     InitWindow(GetScreenWidth(), GetScreenHeight(), "Raylib Test");
     ToggleBorderlessWindowed();
     SetTargetFPS(60);
 
-    LoadTowerTextures();
-    initOrcs();
+    float dt = GetFrameTime();
 
-    bool orcSpawned = false;
+    LoadTowerTextures();
+    loadOrcTextures();
 
     while(!WindowShouldClose()) {
-        float dt = GetFrameTime();
-
-        if(!orcSpawned) {
-            SpawnOrc({
-                (float)GetScreenWidth() - 300,
-                (float)GetScreenHeight() / 2
-            });
-            orcSpawned = true;
-        }
-
-        UpdateOrcs(dt);
 
         BeginDrawing();
         ClearBackground(YELLOW);
         drawTowerTextures();
-        DrawOrcs();
+        initOrc();
+        drawOrcTextures();
         EndDrawing();
 
         if(IsKeyPressed(KEY_ESCAPE)) {
