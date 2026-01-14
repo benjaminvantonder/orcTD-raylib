@@ -2,8 +2,8 @@
 #define MAIN_H
 
 // Global screen size
-#define SCREEN_WIDTH int;
-#define SCREEN_HEIGHT int;
+#define SCREEN_WIDTH GetScreenWidth()
+#define SCREEN_HEIGHT GetScreenHeight()
 
 #include "raylib.h"
 
