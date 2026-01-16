@@ -1,7 +1,7 @@
 CXX = g++
-CXXFLAGS = -Iinclude -Llib -lraylib -lopengl32 -lgdi32 -lwinmm
+CXXFLAGS = -Iincludes -Llibs -lraylib -lopengl32 -lgdi32 -lwinmm
 
-SRC = main.cpp movement.cpp orcTextures.cpp towerTextures.cpp
+SRC = main.cpp movement.cpp orcTextures.cpp towerTextures.cpp menuTextures.cpp
 OUT = game
 
 all:
