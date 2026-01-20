@@ -4,6 +4,7 @@
 #include "movement.h"
 #include "towerTextures.h"
 #include "orcTextures.h"
+#include "movement.h"
 #include <cmath>
 
 // Single definition of the global tower rectangle
@@ -19,20 +20,28 @@ int main() {
 
     LoadTowerTextures();
     loadOrcTextures();
+    initOrc();
+    printf("Key s pressed!\n");
 
     while(!WindowShouldClose()) {
-
         BeginDrawing();
         ClearBackground(YELLOW);
         drawTowerTextures();
-        initOrc();
+
         drawOrcTextures();
+
+        if(IsKeyDown(KEY_S)) {
+            updateOrc();
+            printf("Key s pressed!\n");
+        }
+
         EndDrawing();
 
         if(IsKeyPressed(KEY_ESCAPE)) {
             break;
 
         }
+
     }
 
     CloseWindow();

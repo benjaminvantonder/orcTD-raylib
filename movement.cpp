@@ -5,6 +5,11 @@
 // This file is for handling npc movement
 // This tower defense won't have manual player input for movement
 
+void moveOrc() {
+
+    orc.position.x = orc.position.x + 1;
+
+}
 
 
 /*
