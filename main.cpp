@@ -5,6 +5,7 @@
 #include "towerTextures.h"
 #include "orcTextures.h"
 #include "movement.h"
+#include "game.h"
 #include <cmath>
 
 // Single definition of the global tower rectangle
@@ -16,31 +17,20 @@ int main() {
     ToggleBorderlessWindowed();
     SetTargetFPS(60);
 
-    float dt = GetFrameTime();
+    // float dt = GetFrameTime();
 
-    LoadTowerTextures();
-    loadOrcTextures();
-    initOrc();
-    printf("Key s pressed!\n");
+    Game::loadTextures();
 
     while(!WindowShouldClose()) {
         BeginDrawing();
+
         ClearBackground(YELLOW);
-        drawTowerTextures();
 
-        drawOrcTextures();
-
-        if(IsKeyDown(KEY_S)) {
-            updateOrc();
-            printf("Key s pressed!\n");
-        }
+        Game::Draw();
 
         EndDrawing();
 
-        if(IsKeyPressed(KEY_ESCAPE)) {
-            break;
-
-        }
+        Game::Update();
 
     }
 
