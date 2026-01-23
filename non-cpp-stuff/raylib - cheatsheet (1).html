@@ -1,305 +1,0 @@
-From: <Saved by Blink>
-Snapshot-Content-Location: https://www.raylib.com/cheatsheet/raymath_cheatsheet.html
-Subject: raylib - cheatsheet
-Date: Tue, 2 Dec 2025 23:52:03 +0200
-MIME-Version: 1.0
-Content-Type: multipart/related;
-	type="text/html";
-	boundary="----MultipartBoundary--sWzFCOPEZtRLt788zO3uO0JcVz7GdSansNYd6aq5jO----"
-
-
-------MultipartBoundary--sWzFCOPEZtRLt788zO3uO0JcVz7GdSansNYd6aq5jO----
-Content-Type: text/html
-Content-ID: <frame-76BA2DBC38AA516BD4C402B1645D6C22@mhtml.blink>
-Content-Transfer-Encoding: binary
-Content-Location: https://www.raylib.com/cheatsheet/raymath_cheatsheet.html
-
-<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="cid:css-975ff71e-2853-4f20-b532-cbbd4b445f6f@mhtml.blink" />
-        
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-        <title>raylib - cheatsheet</title>
-        
-
-        <meta name="title" content="raylib - cheatsheet">
-        <meta name="description" content="raylib is a simple and easy-to-use library to enjoy videogames programming. Don't miss latest functions added to raylib... check raylib cheatsheet">
-        <meta name="keywords" content="raylib, videogames, programming, C, C++, library, learn, study, simple, easy, free, open source, raysan">
-        <meta name="viewport" content="width=device-width">
-
-        <!-- Open Graph metatags for sharing -->
-        <meta property="og:title" content="raylib - cheatsheet">
-        <meta property="og:image" content="https://www.raylib.com/common/img/raylib_logo_card.png">
-        <meta property="og:url" content="https://www.raylib.com">
-        <meta property="og:site_name" content="raylib">
-        <meta property="og:description" content="Don't miss latest functions added to raylib... check raylib cheatsheet">
-
-        <!-- Add jQuery library -->
-        
-
-        <!-- hightlight.js - Syntax highlighting for the Web -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/docco.min.css">
-        
-
-        
-
-        
-    </head>
-
-    <body>
-        <div id="header">
-            <a id="logo" href="https://www.raylib.com/index.html"></a>
-            <p id="title">A simple and easy-to-use library to enjoy videogames programming</p>
-            <p id="plinks">[<a href="https://discord.gg/raylib">raylib Discord server</a>][<a href="https://github.com/raysan5/raylib">github.com/raysan5/raylib</a>][<a href="https://github.com/raysan5/raylib/blob/master/src/raylib.h">raylib.h</a>]</p>
-            <p></p>
-            <p id="version">v4.5 quick reference card</p>
-        </div>
-        <br>
-        <div id="fulldata">
-            <p id="pmath">module: raymath</p>
-            <div id="math"><pre><code class="cpp hljs ">
-    <span class="hljs-comment">// Utils math</span>
-    <span class="hljs-keyword">float</span> Clamp(<span class="hljs-keyword">float</span> value, <span class="hljs-keyword">float</span> min, <span class="hljs-keyword">float</span> max);                             <span class="hljs-comment">// Clamp float value</span>
-    <span class="hljs-keyword">float</span> Lerp(<span class="hljs-keyword">float</span> start, <span class="hljs-keyword">float</span> end, <span class="hljs-keyword">float</span> amount);                           <span class="hljs-comment">// Calculate linear interpolation between two floats</span>
-    <span class="hljs-keyword">float</span> Normalize(<span class="hljs-keyword">float</span> value, <span class="hljs-keyword">float</span> start, <span class="hljs-keyword">float</span> end);                       <span class="hljs-comment">// Normalize input value within input range</span>
-    <span class="hljs-keyword">float</span> Remap(<span class="hljs-keyword">float</span> value, <span class="hljs-keyword">float</span> inputStart, <span class="hljs-keyword">float</span> inputEnd, <span class="hljs-keyword">float</span> outputStart, <span class="hljs-keyword">float</span> outputEnd); <span class="hljs-comment">// Remap input value within input range to output range</span>
-    <span class="hljs-keyword">float</span> Wrap(<span class="hljs-keyword">float</span> value, <span class="hljs-keyword">float</span> min, <span class="hljs-keyword">float</span> max);                              <span class="hljs-comment">// Wrap input value from min to max</span>
-    <span class="hljs-keyword">int</span> FloatEquals(<span class="hljs-keyword">float</span> x, <span class="hljs-keyword">float</span> y);                                          <span class="hljs-comment">// Check whether two given floats are almost equal</span>
-
-    <span class="hljs-comment">// Vector2 math</span>
-    Vector2 Vector2Zero(<span class="hljs-keyword">void</span>);                                                  <span class="hljs-comment">// Vector with components value 0.0f</span>
-    Vector2 Vector2One(<span class="hljs-keyword">void</span>);                                                   <span class="hljs-comment">// Vector with components value 1.0f</span>
-    Vector2 Vector2Add(Vector2 v1, Vector2 v2);                                 <span class="hljs-comment">// Add two vectors (v1 + v2)</span>
-    Vector2 Vector2AddValue(Vector2 v, <span class="hljs-keyword">float</span> add);                              <span class="hljs-comment">// Add vector and float value</span>
-    Vector2 Vector2Subtract(Vector2 v1, Vector2 v2);                            <span class="hljs-comment">// Subtract two vectors (v1 - v2)</span>
-    Vector2 Vector2SubtractValue(Vector2 v, <span class="hljs-keyword">float</span> sub);                         <span class="hljs-comment">// Subtract vector by float value</span>
-    <span class="hljs-keyword">float</span> Vector2Length(Vector2 v);                                             <span class="hljs-comment">// Calculate vector length</span>
-    <span class="hljs-keyword">float</span> Vector2LengthSqr(Vector2 v);                                          <span class="hljs-comment">// Calculate vector square length</span>
-    <span class="hljs-keyword">float</span> Vector2DotProduct(Vector2 v1, Vector2 v2);                            <span class="hljs-comment">// Calculate two vectors dot product</span>
-    <span class="hljs-keyword">float</span> Vector2Distance(Vector2 v1, Vector2 v2);                              <span class="hljs-comment">// Calculate distance between two vectors</span>
-    <span class="hljs-keyword">float</span> Vector2DistanceSqr(Vector2 v1, Vector2 v2);                           <span class="hljs-comment">// Calculate square distance between two vectors</span>
-    <span class="hljs-keyword">float</span> Vector2Angle(Vector2 v1, Vector2 v2);                                 <span class="hljs-comment">// Calculate angle from two vectors</span>
-    Vector2 Vector2Scale(Vector2 v, <span class="hljs-keyword">float</span> scale);                               <span class="hljs-comment">// Scale vector (multiply by value)</span>
-    Vector2 Vector2Multiply(Vector2 v1, Vector2 v2);                            <span class="hljs-comment">// Multiply vector by vector</span>
-    Vector2 Vector2Negate(Vector2 v);                                           <span class="hljs-comment">// Negate vector</span>
-    Vector2 Vector2Divide(Vector2 v1, Vector2 v2);                              <span class="hljs-comment">// Divide vector by vector</span>
-    Vector2 Vector2Normalize(Vector2 v);                                        <span class="hljs-comment">// Normalize provided vector</span>
-    Vector2 Vector2Transform(Vector2 v, Matrix mat);                            <span class="hljs-comment">// Transforms a Vector2 by a given Matrix</span>
-    Vector2 Vector2Lerp(Vector2 v1, Vector2 v2, <span class="hljs-keyword">float</span> amount);                  <span class="hljs-comment">// Calculate linear interpolation between two vectors</span>
-    Vector2 Vector2Reflect(Vector2 v, Vector2 normal);                          <span class="hljs-comment">// Calculate reflected vector to normal</span>
-    Vector2 Vector2Rotate(Vector2 v, <span class="hljs-keyword">float</span> angle);                              <span class="hljs-comment">// Rotate vector by angle</span>
-    Vector2 Vector2MoveTowards(Vector2 v, Vector2 target, <span class="hljs-keyword">float</span> maxDistance);   <span class="hljs-comment">// Move Vector towards target</span>
-    Vector2 Vector2Invert(Vector2 v);                                           <span class="hljs-comment">// Invert the given vector</span>
-    Vector2 Vector2Clamp(Vector2 v, Vector2 min, Vector2 max);                  <span class="hljs-comment">// Clamp the components of the vector between min and max values specified by the given vectors</span>
-    Vector2 Vector2ClampValue(Vector2 v, <span class="hljs-keyword">float</span> min, <span class="hljs-keyword">float</span> max);                 <span class="hljs-comment">// Clamp the magnitude of the vector between two min and max values</span>
-    <span class="hljs-keyword">int</span> Vector2Equals(Vector2 p, Vector2 q);                                    <span class="hljs-comment">// Check whether two given vectors are almost equal</span>
-
-    <span class="hljs-comment">// Vector3 math</span>
-    Vector3 Vector3Zero(<span class="hljs-keyword">void</span>);                                                  <span class="hljs-comment">// Vector with components value 0.0f</span>
-    Vector3 Vector3One(<span class="hljs-keyword">void</span>);                                                   <span class="hljs-comment">// Vector with components value 1.0f</span>
-    Vector3 Vector3Add(Vector3 v1, Vector3 v2);                                 <span class="hljs-comment">// Add two vectors</span>
-    Vector3 Vector3AddValue(Vector3 v, <span class="hljs-keyword">float</span> add);                              <span class="hljs-comment">// Add vector and float value</span>
-    Vector3 Vector3Subtract(Vector3 v1, Vector3 v2);                            <span class="hljs-comment">// Subtract two vectors</span>
-    Vector3 Vector3SubtractValue(Vector3 v, <span class="hljs-keyword">float</span> sub);                         <span class="hljs-comment">// Subtract vector by float value</span>
-    Vector3 Vector3Scale(Vector3 v, <span class="hljs-keyword">float</span> scalar);                              <span class="hljs-comment">// Multiply vector by scalar</span>
-    Vector3 Vector3Multiply(Vector3 v1, Vector3 v2);                            <span class="hljs-comment">// Multiply vector by vector</span>
-    Vector3 Vector3CrossProduct(Vector3 v1, Vector3 v2);                        <span class="hljs-comment">// Calculate two vectors cross product</span>
-    Vector3 Vector3Perpendicular(Vector3 v);                                    <span class="hljs-comment">// Calculate one vector perpendicular vector</span>
-    <span class="hljs-keyword">float</span> Vector3Length(<span class="hljs-keyword">const</span> Vector3 v);                                       <span class="hljs-comment">// Calculate vector length</span>
-    <span class="hljs-keyword">float</span> Vector3LengthSqr(<span class="hljs-keyword">const</span> Vector3 v);                                    <span class="hljs-comment">// Calculate vector square length</span>
-    <span class="hljs-keyword">float</span> Vector3DotProduct(Vector3 v1, Vector3 v2);                            <span class="hljs-comment">// Calculate two vectors dot product</span>
-    <span class="hljs-keyword">float</span> Vector3Distance(Vector3 v1, Vector3 v2);                              <span class="hljs-comment">// Calculate distance between two vectors</span>
-    <span class="hljs-keyword">float</span> Vector3DistanceSqr(Vector3 v1, Vector3 v2);                           <span class="hljs-comment">// Calculate square distance between two vectors</span>
-    <span class="hljs-keyword">float</span> Vector3Angle(Vector3 v1, Vector3 v2);                                 <span class="hljs-comment">// Calculate angle between two vectors</span>
-    Vector3 Vector3Negate(Vector3 v);                                           <span class="hljs-comment">// Negate provided vector (invert direction)</span>
-    Vector3 Vector3Divide(Vector3 v1, Vector3 v2);                              <span class="hljs-comment">// Divide vector by vector</span>
-    Vector3 Vector3Normalize(Vector3 v);                                        <span class="hljs-comment">// Normalize provided vector</span>
-    <span class="hljs-keyword">void</span> Vector3OrthoNormalize(Vector3 *v1, Vector3 *v2);                       <span class="hljs-comment">// Orthonormalize provided vectors Makes vectors normalized and orthogonal to each other Gram-Schmidt function implementation</span>
-    Vector3 Vector3Transform(Vector3 v, Matrix mat);                            <span class="hljs-comment">// Transforms a Vector3 by a given Matrix</span>
-    Vector3 Vector3RotateByQuaternion(Vector3 v, Quaternion q);                 <span class="hljs-comment">// Transform a vector by quaternion rotation</span>
-    Vector3 Vector3RotateByAxisAngle(Vector3 v, Vector3 axis, <span class="hljs-keyword">float</span> angle);     <span class="hljs-comment">// Rotates a vector around an axis</span>
-    Vector3 Vector3Lerp(Vector3 v1, Vector3 v2, <span class="hljs-keyword">float</span> amount);                  <span class="hljs-comment">// Calculate linear interpolation between two vectors</span>
-    Vector3 Vector3Reflect(Vector3 v, Vector3 normal);                          <span class="hljs-comment">// Calculate reflected vector to normal</span>
-    Vector3 Vector3Min(Vector3 v1, Vector3 v2);                                 <span class="hljs-comment">// Get min value for each pair of components</span>
-    Vector3 Vector3Max(Vector3 v1, Vector3 v2);                                 <span class="hljs-comment">// Get max value for each pair of components</span>
-    Vector3 Vector3Barycenter(Vector3 p, Vector3 a, Vector3 b, Vector3 c);      <span class="hljs-comment">// Compute barycenter coordinates (u, v, w) for point p with respect to triangle (a, b, c) NOTE: Assumes P is on the plane of the triangle</span>
-    Vector3 Vector3Unproject(Vector3 source, Matrix projection, Matrix view);   <span class="hljs-comment">// Projects a Vector3 from screen space into object space NOTE: We are avoiding calling other raymath functions despite available</span>
-    float3 Vector3ToFloatV(Vector3 v);                                          <span class="hljs-comment">// Get Vector3 as float array</span>
-    Vector3 Vector3Invert(Vector3 v);                                           <span class="hljs-comment">// Invert the given vector</span>
-    Vector3 Vector3Clamp(Vector3 v, Vector3 min, Vector3 max);                  <span class="hljs-comment">// Clamp the components of the vector between min and max values specified by the given vectors</span>
-    Vector3 Vector3ClampValue(Vector3 v, <span class="hljs-keyword">float</span> min, <span class="hljs-keyword">float</span> max);                 <span class="hljs-comment">// Clamp the magnitude of the vector between two values</span>
-    <span class="hljs-keyword">int</span> Vector3Equals(Vector3 p, Vector3 q);                                    <span class="hljs-comment">// Check whether two given vectors are almost equal</span>
-    Vector3 Vector3Refract(Vector3 v, Vector3 n, <span class="hljs-keyword">float</span> r);                      <span class="hljs-comment">// Compute the direction of a refracted ray where v specifies the normalized direction of the incoming ray, n specifies the normalized normal vector of the interface of two optical media, and r specifies the ratio of the refractive index of the medium from where the ray comes to the refractive index of the medium on the other side of the surface</span>
-
-    <span class="hljs-comment">// Matrix math</span>
-    <span class="hljs-keyword">float</span> MatrixDeterminant(Matrix mat);                                        <span class="hljs-comment">// Compute matrix determinant</span>
-    <span class="hljs-keyword">float</span> MatrixTrace(Matrix mat);                                              <span class="hljs-comment">// Get the trace of the matrix (sum of the values along the diagonal)</span>
-    Matrix MatrixTranspose(Matrix mat);                                         <span class="hljs-comment">// Transposes provided matrix</span>
-    Matrix MatrixInvert(Matrix mat);                                            <span class="hljs-comment">// Invert provided matrix</span>
-    Matrix MatrixIdentity(<span class="hljs-keyword">void</span>);                                                <span class="hljs-comment">// Get identity matrix</span>
-    Matrix MatrixAdd(Matrix left, Matrix right);                                <span class="hljs-comment">// Add two matrices</span>
-    Matrix MatrixSubtract(Matrix left, Matrix right);                           <span class="hljs-comment">// Subtract two matrices (left - right)</span>
-    Matrix MatrixMultiply(Matrix left, Matrix right);                           <span class="hljs-comment">// Get two matrix multiplication NOTE: When multiplying matrices... the order matters!</span>
-    Matrix MatrixTranslate(<span class="hljs-keyword">float</span> x, <span class="hljs-keyword">float</span> y, <span class="hljs-keyword">float</span> z);                          <span class="hljs-comment">// Get translation matrix</span>
-    Matrix MatrixRotate(Vector3 axis, <span class="hljs-keyword">float</span> angle);                             <span class="hljs-comment">// Create rotation matrix from axis and angle NOTE: Angle should be provided in radians</span>
-    Matrix MatrixRotateX(<span class="hljs-keyword">float</span> angle);                                          <span class="hljs-comment">// Get x-rotation matrix NOTE: Angle must be provided in radians</span>
-    Matrix MatrixRotateY(<span class="hljs-keyword">float</span> angle);                                          <span class="hljs-comment">// Get y-rotation matrix NOTE: Angle must be provided in radians</span>
-    Matrix MatrixRotateZ(<span class="hljs-keyword">float</span> angle);                                          <span class="hljs-comment">// Get z-rotation matrix NOTE: Angle must be provided in radians</span>
-    Matrix MatrixRotateXYZ(Vector3 angle);                                      <span class="hljs-comment">// Get xyz-rotation matrix NOTE: Angle must be provided in radians</span>
-    Matrix MatrixRotateZYX(Vector3 angle);                                      <span class="hljs-comment">// Get zyx-rotation matrix NOTE: Angle must be provided in radians</span>
-    Matrix MatrixScale(<span class="hljs-keyword">float</span> x, <span class="hljs-keyword">float</span> y, <span class="hljs-keyword">float</span> z);                              <span class="hljs-comment">// Get scaling matrix</span>
-    Matrix MatrixFrustum(<span class="hljs-keyword">double</span> left, <span class="hljs-keyword">double</span> right, <span class="hljs-keyword">double</span> bottom, <span class="hljs-keyword">double</span> top, <span class="hljs-keyword">double</span> near, <span class="hljs-keyword">double</span> far); <span class="hljs-comment">// Get perspective projection matrix</span>
-    Matrix MatrixPerspective(<span class="hljs-keyword">double</span> fovy, <span class="hljs-keyword">double</span> aspect, <span class="hljs-keyword">double</span> near, <span class="hljs-keyword">double</span> far); <span class="hljs-comment">// Get perspective projection matrix NOTE: Fovy angle must be provided in radians</span>
-    Matrix MatrixOrtho(<span class="hljs-keyword">double</span> left, <span class="hljs-keyword">double</span> right, <span class="hljs-keyword">double</span> bottom, <span class="hljs-keyword">double</span> top, <span class="hljs-keyword">double</span> near, <span class="hljs-keyword">double</span> far); <span class="hljs-comment">// Get orthographic projection matrix</span>
-    Matrix MatrixLookAt(Vector3 eye, Vector3 target, Vector3 up);               <span class="hljs-comment">// Get camera look-at matrix (view matrix)</span>
-    float16 MatrixToFloatV(Matrix mat);                                         <span class="hljs-comment">// Get float array of matrix data</span>
-
-    <span class="hljs-comment">// Quaternion math</span>
-    Quaternion QuaternionAdd(Quaternion q1, Quaternion q2);                     <span class="hljs-comment">// Add two quaternions</span>
-    Quaternion QuaternionAddValue(Quaternion q, <span class="hljs-keyword">float</span> add);                     <span class="hljs-comment">// Add quaternion and float value</span>
-    Quaternion QuaternionSubtract(Quaternion q1, Quaternion q2);                <span class="hljs-comment">// Subtract two quaternions</span>
-    Quaternion QuaternionSubtractValue(Quaternion q, <span class="hljs-keyword">float</span> sub);                <span class="hljs-comment">// Subtract quaternion and float value</span>
-    Quaternion QuaternionIdentity(<span class="hljs-keyword">void</span>);                                        <span class="hljs-comment">// Get identity quaternion</span>
-    <span class="hljs-keyword">float</span> QuaternionLength(Quaternion q);                                       <span class="hljs-comment">// Computes the length of a quaternion</span>
-    Quaternion QuaternionNormalize(Quaternion q);                               <span class="hljs-comment">// Normalize provided quaternion</span>
-    Quaternion QuaternionInvert(Quaternion q);                                  <span class="hljs-comment">// Invert provided quaternion</span>
-    Quaternion QuaternionMultiply(Quaternion q1, Quaternion q2);                <span class="hljs-comment">// Calculate two quaternion multiplication</span>
-    Quaternion QuaternionScale(Quaternion q, <span class="hljs-keyword">float</span> mul);                        <span class="hljs-comment">// Scale quaternion by float value</span>
-    Quaternion QuaternionDivide(Quaternion q1, Quaternion q2);                  <span class="hljs-comment">// Divide two quaternions</span>
-    Quaternion QuaternionLerp(Quaternion q1, Quaternion q2, <span class="hljs-keyword">float</span> amount);      <span class="hljs-comment">// Calculate linear interpolation between two quaternions</span>
-    Quaternion QuaternionNlerp(Quaternion q1, Quaternion q2, <span class="hljs-keyword">float</span> amount);     <span class="hljs-comment">// Calculate slerp-optimized interpolation between two quaternions</span>
-    Quaternion QuaternionSlerp(Quaternion q1, Quaternion q2, <span class="hljs-keyword">float</span> amount);     <span class="hljs-comment">// Calculates spherical linear interpolation between two quaternions</span>
-    Quaternion QuaternionFromVector3ToVector3(Vector3 from, Vector3 to);        <span class="hljs-comment">// Calculate quaternion based on the rotation from one vector to another</span>
-    Quaternion QuaternionFromMatrix(Matrix mat);                                <span class="hljs-comment">// Get a quaternion for a given rotation matrix</span>
-    Matrix QuaternionToMatrix(Quaternion q);                                    <span class="hljs-comment">// Get a matrix for a given quaternion</span>
-    Quaternion QuaternionFromAxisAngle(Vector3 axis, <span class="hljs-keyword">float</span> angle);              <span class="hljs-comment">// Get rotation quaternion for an angle and axis NOTE: Angle must be provided in radians</span>
-    <span class="hljs-keyword">void</span> QuaternionToAxisAngle(Quaternion q, Vector3 *outAxis, <span class="hljs-keyword">float</span> *outAngle); <span class="hljs-comment">// Get the rotation angle and axis for a given quaternion</span>
-    Quaternion QuaternionFromEuler(<span class="hljs-keyword">float</span> pitch, <span class="hljs-keyword">float</span> yaw, <span class="hljs-keyword">float</span> roll);         <span class="hljs-comment">// Get the quaternion equivalent to Euler angles NOTE: Rotation order is ZYX</span>
-    Vector3 QuaternionToEuler(Quaternion q);                                    <span class="hljs-comment">// Get the Euler angles equivalent to quaternion (roll, pitch, yaw) NOTE: Angles are returned in a Vector3 struct in radians</span>
-    Quaternion QuaternionTransform(Quaternion q, Matrix mat);                   <span class="hljs-comment">// Transform a quaternion given a transformation matrix</span>
-    <span class="hljs-keyword">int</span> QuaternionEquals(Quaternion p, Quaternion q);                           <span class="hljs-comment">// Check whether two given quaternions are almost equal</span>
-</code></pre></div>
-
-            <p>Other cheatsheets</p>
-            <ul>
-                <li>
-                    <a href="https://www.raylib.com/cheatsheet/cheatsheet.html" id="">raylib cheatsheet</a>
-                </li>
-            </ul>
-
-            <div id="copyright">
-                <p>raylib quick reference card - Copyright (c) 2013-2025 Ramon Santamaria (<a href="https://www.twitter.com/raysan5">@raysan5</a>)</p>
-            </div>
-        </div>
-    
-
-</body></html>
-------MultipartBoundary--sWzFCOPEZtRLt788zO3uO0JcVz7GdSansNYd6aq5jO----
-Content-Type: text/css
-Content-Transfer-Encoding: binary
-Content-Location: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/docco.min.css
-
-@charset "utf-8";
-
-.hljs { display: block; overflow-x: auto; padding: 0.5em; color: rgb(0, 0, 0); background: rgb(248, 248, 255); }
-
-.hljs-comment, .hljs-template_comment, .diff .hljs-header, .hljs-javadoc { color: rgb(64, 128, 128); font-style: italic; }
-
-.hljs-keyword, .assignment, .hljs-literal, .css .rule .hljs-keyword, .hljs-winutils, .javascript .hljs-title, .lisp .hljs-title, .hljs-subst { color: rgb(149, 65, 33); }
-
-.hljs-number, .hljs-hexcolor { color: rgb(64, 160, 112); }
-
-.hljs-string, .hljs-tag .hljs-value, .hljs-phpdoc, .tex .hljs-formula { color: rgb(33, 145, 97); }
-
-.hljs-title, .hljs-id { color: rgb(25, 70, 157); }
-
-.hljs-params { color: rgb(0, 0, 255); }
-
-.javascript .hljs-title, .lisp .hljs-title, .hljs-subst { font-weight: normal; }
-
-.hljs-class .hljs-title, .haskell .hljs-label, .tex .hljs-command { color: rgb(68, 85, 136); font-weight: bold; }
-
-.hljs-tag, .hljs-tag .hljs-title, .hljs-rules .hljs-property, .django .hljs-tag .hljs-keyword { color: rgb(0, 0, 128); font-weight: normal; }
-
-.hljs-attribute, .hljs-variable, .instancevar, .lisp .hljs-body { color: rgb(0, 128, 128); }
-
-.hljs-regexp { color: rgb(187, 102, 136); }
-
-.hljs-class { color: rgb(68, 85, 136); font-weight: bold; }
-
-.hljs-symbol, .ruby .hljs-symbol .hljs-string, .ruby .hljs-symbol .hljs-keyword, .ruby .hljs-symbol .keymethods, .lisp .hljs-keyword, .tex .hljs-special, .input_number { color: rgb(153, 0, 115); }
-
-.builtin, .constructor, .hljs-built_in, .lisp .hljs-title { color: rgb(0, 134, 179); }
-
-.hljs-preprocessor, .hljs-pragma, .hljs-pi, .hljs-doctype, .hljs-shebang, .hljs-cdata { color: rgb(153, 153, 153); font-weight: bold; }
-
-.hljs-deletion { background: rgb(255, 221, 221); }
-
-.hljs-addition { background: rgb(221, 255, 221); }
-
-.diff .hljs-change { background: rgb(0, 134, 179); }
-
-.hljs-chunk { color: rgb(170, 170, 170); }
-
-.tex .hljs-formula { opacity: 0.5; }
-------MultipartBoundary--sWzFCOPEZtRLt788zO3uO0JcVz7GdSansNYd6aq5jO----
-Content-Type: image/png
-Content-Transfer-Encoding: binary
-Content-Location: https://www.raylib.com/common/img/raylib_logo.png
-
-âPNG
-
-   IHDR   Ä   Ä   L\ˆú   sRGB ÆŒÈ   gAMA  ±è¸a   	pHYs  √  √«o®d   tEXtSoftware Paint.NET v3.5.11GÛB7  ªIDATx^Ìó—b£:€ˇˇ›ªÔ≤c6±>ÑC‰RÊeóZ≤‰1çö/ïo˛˝4j]wúJñ;øM†\◊-&Î¿*iÁ»*úu!YÁ»:o^aëÀÃ:Höπø[‡:n/ˆÛé.pxjÅ˛„ﬂÓ8ïQ˚C´˛¢fâQ˘¥¿Ω‘u—⁄›yªqãE‡Q–™C^»oxt?¥Íêó∆Ë∑∑?¥∆®CXe¥7∞Ê,—hı·´ƒ©º[≠-Í˝¿n‹uÂ7ø@^Hñ˜s4≠:‰ŸEgâq≥∑?¥∆‹C¯\–ö7Ñ≥»ÍØÆãVÚ“qtøXjZu»q7®í%P%⁄≠:‰•qïã+qhçπ v◊uÅ÷Òø	ª•.Z[¢!o!KÙËß∆…o~Åºê¨Qq˜w4≠:‰Ÿé&¶Ê¨Û¢5Ê∑aw\¥˙á∞õOã9ã∫?¥Íê∑‡ì%:´ø{‰Ë~h’!Ô†ÓW‚–ì5Ñ›b‹∏˙CÎ¯ﬂÑ≥‚Tﬁ≠ãVÚF9»ßp◊EküÚ+B^»U~™?¥ÍêóÜ[L÷~%≠1£a∑@W]¥éˇMÿÕ(áVÚ‘É∏„≤p˜á÷>˜^ÁË9–™CﬁØxVZc‘!úuïQ˚Ckﬁ˛ÙÅ≥©œÅVÚ‹≥.$´?˘Õ/ê‚„f¥ãC´yi¢≥∫)u—£aï¨ªqù≠˛!<∫Ë¨˛Í∫h’!o¡}!Ó8ï¨∫˜>»—ãC´yi¢èxJhç…¬Y¢?}qhΩŒ7awúõ∫.Z[¢!oaîÉ|
-w]¥Íê¢68∫@w—~h’!/çOâ©9´.Zc≤Ü∞ä[†;ÆZÛæ	èßÚn]¥Íê∑0∫7Ó˛–⁄ß¸äê2∫Ë—˙CÎB˜£àº·™∏/doZc≤Ü∞óÖ´?¥Í∏éßÚn]¥∂DüE‰-å~`7ÓÛ ~ﬁCxù£qh’!œ.–}`ï¨∫¥∆d·—qù≠˝??Yo† Ë\˜áVÚ‘g≈©dıw·d–∫–ΩÚ.#0{?¥∆d·¨VqıáVˇŒùUW•ÆãVÚ‹Œò’Z˚∏ápY¢£8¥.‹C8‡¨∫hç…¬n≤D˜@Î¯C8+NÂ›∫hmânÑº›dâq„Ó≠}‹C8KÙhu—™Cﬁ›˝ùU≠1£·ü":≠„a˜~nÍ˛–™CﬁB÷Ö∏Eg’Eku´∏¢íuqh’!Ô2U‘∫{˚CkÃËCXÂ,ÅGA´´∏≈å*∫P◊EkKt#‰ù∆ø<?Ò˝U/Òº¨Ä÷>Í˛io‡≥Œáhûüò˙ÄÁ?ˇÒÏ∫ÄÓGyvÅÓã;á—ßƒ±¥ƒs˘…ﬁ∫hçQáëØ°∆©ÏŸ£õ/ı≤°GÜ¬*é˝0™9%TΩÄ∫?¥∂∏áñN†πà~çﬂÄËû#÷¥¯ç!¸J}¢–⁄«=Ñü°«Dàü˛ﬂˆ«ZøoyA´yñ_ı¬‹‡∆õ_xƒŒuyﬁd⁄Ô?√è÷ÑN˚±¶≈≥∞º—≈Zc‘!¨≤vqÙ∏*®Gª{iB'XcıÂÇ?yÅÖß7ögiÛ–Í¬{‚Ë1Ór;ﬂË	÷¥xﬁﬂºˆÇVÚBèè.ï˝ÊPı#kÜÁMG‚G÷RógmÛ	û–⁄G¬*œ¢È1Ó≤ÇËDøÓﬂ^0kA|ˇñ:ﬂÑYV'–™Cû¸Ê+–c‹Âs]¢7qaŒÀB\ya≠-]‚–£aıB÷‚Ë±Ì2ÄË ûµ —„£ÉÁWÊÖ<oÓœ¬˜uÜ=∆]V-üôÁó¯˝±÷â¥‡	÷˛≠÷^–⁄›yVË18CÀZÜ·D?Ìø—kÒ,LKÒﬁÜË˘ÕWáû7ø@èqóD˜ ˙5~„‚à˛ˇ«¬Z´<˜àº†u°{!‰Yô|òÁ-ÊÉÃ°=¶˝˛&L£UûDΩøºX<«¡—ΩP.≠1ıçê◊†æ˘Ó8ïx?·»]∑Z˝CX≈}!˚„–ﬂæ§ßP˜á÷ñËF»[pã9˜ z˜9‰7ø@^H¶Ë?à>£'àﬁ«—≠:‰•â~Á¿ÓAÙg(˝°5F¬*Ô‹‚ß«°’?Ñ’8ï¨∫nÍ˛–⁄í5ÑGÌÆãVÚ~,£]Zu»K√-P›Ô¨8¥∆å>Ñ≥pıáVˇŒ‚ßıá÷˘FD‹˚©®uGÔ/ç´L;«Uƒ§ëuw›´úCÊ*Ixsssì≈◊◊ˇè„5…Å{    IENDÆB`Ç
-------MultipartBoundary--sWzFCOPEZtRLt788zO3uO0JcVz7GdSansNYd6aq5jO----
-Content-Type: text/css
-Content-Transfer-Encoding: binary
-Content-Location: cid:css-975ff71e-2853-4f20-b532-cbbd4b445f6f@mhtml.blink
-
-@charset "utf-8";
-
-@font-face { font-family: grixel_acme_7_wide_xtnd; src: url("../common/font/acme_7_wide_xtnd.woff") format("woff"), url("../common/font/acme_7_wide_xtnd.ttf") format("truetype"); font-weight: normal; font-style: normal; }
-
-body { background-color: rgb(245, 245, 245); }
-
-#fulldata { width: 1315px !important; }
-
-.eximage img { margin: 0px auto; border: 1px solid black; width: 770px; height: auto; }
-
-p { font-family: grixel_acme_7_wide_xtnd, "Courier New", Verdana, Arial; font-size: 13px; line-height: 24px; }
-
-a { font-family: grixel_acme_7_wide_xtnd, "Courier New", Verdana, Arial; font-size: 13px; line-height: 24px; }
-
-pre code { font-family: "Courier New"; font-size: 12px; border: 1px solid rgb(176, 176, 176); height: auto; width: auto !important; }
-
-.exdownbtn { width: 250px; height: 30px; float: left; position: relative; cursor: pointer; font-weight: bold; font-size: 10px; line-height: 30px; text-align: center; background-color: rgb(225, 225, 225); color: rgb(92, 90, 90); border: 4px solid rgb(137, 136, 136); font-family: grixel_acme_7_wide_xtnd, "Courier New", Verdana, Arial; }
-
-.exdownbtn:hover { background-color: rgb(240, 214, 214); color: rgb(197, 87, 87); border: 4px solid rgb(230, 102, 102); }
-
-#math pre code { border: 10px solid rgb(193, 112, 255); background-color: rgb(222, 179, 255); }
-
-#logo { width: 128px; height: 128px; float: left; position: relative; background-image: url("../common/img/raylib_logo.png"); }
-
-#header { position: relative; height: 110px; width: 1000px; }
-
-#title, #plinks, #version { position: relative; float: left; margin: 10px 0px 0px 10px; }
-
-#plinks { color: gray; }
-
-#plinks a, #copyright a { color: gray; text-decoration: none; }
-
-#plinks a:hover { color: black; }
-
-#version { margin-top: 23px; width: 500px; }
-
-#pmath { margin-bottom: -12px; margin-left: 12px; color: rgb(157, 28, 255); }
-
-#fullgroup { display: grid; column-gap: 20px; grid-template-columns: auto auto; }
-
-#copyright p { color: rgb(139, 139, 139); font-size: 10px; }
-
-#copyright a:hover { color: black; }
-
-#downpdf { text-decoration: none; color: rgb(170, 170, 170); }
-
-#downpdf:hover { color: rgb(68, 68, 68); }
-------MultipartBoundary--sWzFCOPEZtRLt788zO3uO0JcVz7GdSansNYd6aq5jO------

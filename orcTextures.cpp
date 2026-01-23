@@ -5,10 +5,10 @@
 #include "orcTextures.h"
 #include "movement.h"
 
-#define MAX_ORCS 1
-
 Image orcTextureImage;
 Texture orcTexture;
+
+Orc orc;
 
 void initOrc() {
 
