@@ -2,24 +2,31 @@
 
 #include "main.h"
 #include "menuTextures.h"
+#include "raylib.h"
+#include <cmath>
 
+#define PNG_WIDTH 900
+#define PNG_HEIGHT 500
+
+Image menu2dImage;
 Texture2D menu2D;
 
 void loadMainMenu() {
-    menu2D = LoadTexture("./assets/Orc logo.png");
+    menu2dImage = LoadImage("./assets/Orc logo.png");
+
+    menu2D = LoadTextureFromImage(menu2dImage);
+
+    UnloadImage(menu2dImage);
 }
 
-void drawButton(Rectangle Button, char Text[]) {
-    DrawRectangleRec(Button, LIME);
-    DrawRectangleLinesEx(Button, 2, LIME);
-    DrawText(Text, Button.x + 10, Button.y + 10, 20, BLACK);
-}
+// void drawButton(Rectangle Button, char Text[]) {
+//     DrawRectangleRec(Button, LIME);
+//     DrawRectangleLinesEx(Button, 2, LIME);
+//     DrawText(Text, Button.x + 10, Button.y + 10, 20, BLACK);
+// }
 
 void drawMainMenu() {
-    // Menu PNG
-    Rectangle source = {0, 0, PNG_WIDTH, PNG_HEIGHT};
-    Rectangle dest = {SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, source.width, source.height};
-    DrawTexturePro(menu2D, source, dest, {dest.width / 2, 500}, 0, WHITE);
 
-    // Buttons
+    DrawTexture(menu2D, 0, 0, WHITE);
+
 }

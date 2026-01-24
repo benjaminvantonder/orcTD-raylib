@@ -1,5 +1,11 @@
-#define PNG_WIDTH 900
-#define PNG_HEIGHT 500
+#ifndef MENUTEXTURES_H
+#define MENUTEXTURES_H
 
-void loadMainMenu();
-void drawMainMenu();
+#include <cstdio>
+#include "raylib.h"
+
+extern void loadMainMenu();
+//extern void drawButton(Rectangle Button, chat Text[]);
+extern void drawMainMenu();
+
+#endif

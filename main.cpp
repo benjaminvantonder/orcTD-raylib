@@ -2,11 +2,12 @@
 #include "raylib.h"
 #include "main.h"
 #include "game.h"
+#include "menu.h"
 #include <cmath>
-#include "orcTextures.h"
 
 // Single definition of the global tower rectangle
 
+bool isMenu = true;
 Color transparentColor = Fade(WHITE, 0);
 
 int main() {
@@ -16,19 +17,36 @@ int main() {
 
     // float dt = GetFrameTime();
 
-    Game::loadTextures();
+    if(!isMenu) {
+
+        Game::loadTextures();
+
+    } else {
+
+        Menu::Load();
+
+    }
 
     while(!WindowShouldClose()) {
         BeginDrawing();
 
         ClearBackground(YELLOW);
 
-        Game::Draw();
+        if(!isMenu) {
 
-        EndDrawing();
+            Game::Draw();
 
-        Game::Update();
+            EndDrawing();
 
+            Game::Update();
+
+        } else {
+
+            Menu::Draw();
+            EndDrawing();
+            // isMenu = false;
+
+        }
 
     }
 
