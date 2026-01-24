@@ -32,6 +32,11 @@ int main() {
 
         ClearBackground(YELLOW);
 
+        if(IsKeyPressed(KEY_S)) {
+            isMenu = false;
+            Game::loadTextures();
+        }
+
         if(!isMenu) {
 
             Game::Draw();
