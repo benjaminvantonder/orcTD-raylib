@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include "raylib.h"
 #include "main.h"
-#include "movement.h"
-#include "towerTextures.h"
-#include "orcTextures.h"
-#include "movement.h"
 #include "game.h"
 #include <cmath>
+#include "orcTextures.h"
 
 // Single definition of the global tower rectangle
 
@@ -31,6 +28,7 @@ int main() {
         EndDrawing();
 
         Game::Update();
+
 
     }
 

@@ -10,4 +10,6 @@ public:
 
 };
 
+extern bool beginMoving;
+
 #endif // GAME_H

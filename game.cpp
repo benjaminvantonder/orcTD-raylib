@@ -4,6 +4,7 @@
 #include "game.h"
 #include "orcTextures.h"
 #include "towerTextures.h"
+#include "orcHealthBar.h"
 
 bool beginMoving = false;
 
@@ -16,6 +17,7 @@ void Game::Update(void) {
 
     if(beginMoving) {
         updateOrc();
+        updateOrcHealthBar(orc.position.x, orc.position.y);
     }
 
     if(IsKeyPressed(KEY_ESCAPE)) {
@@ -26,12 +28,15 @@ void Game::Update(void) {
 void Game::Draw(void) {
     drawTowerTextures();
     drawOrcTextures();
+    drawOrcHealthBar();
 }
 
 void Game::loadTextures() {
-    
+
     LoadTowerTextures();
     loadOrcTextures();
     initOrc();
+    initOrcHealthBar();
+    updateOrcHealthBar(orc.position.x, orc.position.y);
 
 }
