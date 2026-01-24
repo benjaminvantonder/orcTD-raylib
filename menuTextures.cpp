@@ -1,3 +1,5 @@
+#include <cstdio>
+
 #include "main.h"
 #include "menuTextures.h"
 
@@ -8,8 +10,11 @@ void loadMainMenu()
     menu2D = LoadTexture("./assets/Orc logo.png");
 }
 
-void drawButton(Rectangle Button)
+void drawButton(Rectangle Button, char Text[])
 {
+    DrawRectangleRec(Button, LIME);
+    DrawRectangleLinesEx(Button, 2, LIME);
+    DrawText(Text, Button.x + 10, Button.y + 10, 20, BLACK);
 }
 
 void drawMainMenu()

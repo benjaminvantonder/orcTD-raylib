@@ -10,7 +10,7 @@ extern Texture2D backgroundTexture;
 extern Image castleActive; 
 extern Texture2D castleActiveT; 
 
-extern void LoadTowerTextures();
+extern void loadTowerTextures();
 extern void drawTowerTextures();
 
 #endif

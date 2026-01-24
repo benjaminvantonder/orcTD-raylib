@@ -32,11 +32,7 @@ void initOrc()
 
 void loadOrcTextures()
 {
-
-    orcTextureImage = LoadImage("./assets/Orcs/orc-still.png");
-    UnloadImage(orcTextureImage);
-
-    orcTexture = LoadTextureFromImage(orcTextureImage);
+    orcTexture = LoadTexture("./assets/Orcs/orc-still.png");
 }
 
 void drawOrcTextures()

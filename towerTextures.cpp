@@ -8,7 +8,7 @@ Rectangle towerRect = { 150.0f, 300.0f, 309, 400 };
 Texture2D backgroundTexture;
 Texture2D castleActiveT;
 
-void LoadTowerTextures() {
+void loadTowerTextures() {
 
     Image battleGround = LoadImage("./assets/battleground.png");
     backgroundTexture = LoadTextureFromImage(battleGround);

@@ -27,8 +27,8 @@ int main()
     float dt = GetFrameTime();
 
     loadMainMenu();
-    // loadTowerTextures(); brakes
-    // loadOrcTextures(); brakes
+    // loadTowerTextures();
+    // loadOrcTextures();
 
     while (!WindowShouldClose())
     {
@@ -38,7 +38,7 @@ int main()
 
         // Will add buttons to main game and settings
         drawMainMenu();
-
+        
         // drawTowerTextures();
         // initOrc();
         // drawOrcTextures();
