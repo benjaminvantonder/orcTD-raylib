@@ -5,7 +5,7 @@
 #include "raylib.h"
 
 extern void loadMainMenu();
-//extern void drawButton(Rectangle Button, chat Text[]);
 extern void drawMainMenu();
+extern void drawStartButton();
 
 #endif

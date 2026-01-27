@@ -2,14 +2,24 @@
 
 #include "main.h"
 #include "menuTextures.h"
+
 #include "raylib.h"
 #include <cmath>
 
-#define PNG_WIDTH 900
-#define PNG_HEIGHT 500
+#define BUTTON_WIDTH 300
+#define BUTTON_HEIGHT 100
 
 Image menu2dImage;
 Texture2D menu2D;
+
+Rectangle StartButton = {truncf((1920 / 2) - (BUTTON_WIDTH / 2)), truncf((1080 / 2) + (BUTTON_HEIGHT * 1.5)), BUTTON_WIDTH, BUTTON_HEIGHT};
+
+void drawStartButton() {
+
+    DrawRectangleRec(StartButton, WHITE);
+
+}
+
 
 void loadMainMenu() {
     menu2dImage = LoadImage("./assets/Orc logo.png");

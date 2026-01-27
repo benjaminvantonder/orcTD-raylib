@@ -6,6 +6,8 @@ public:
 
     static void Draw();
     static void Load();
+    static void ButtonClicked();
+    
 
 };
 

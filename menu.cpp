@@ -5,9 +5,17 @@
 
 class Menu;
 
+void ButtonClicked() {
+
+
+
+}
+
 void Menu::Draw() {
 
     drawMainMenu();
+
+    drawStartButton();
 
 }
 
