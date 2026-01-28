@@ -8,4 +8,6 @@ extern void loadMainMenu();
 extern void drawMainMenu();
 extern void drawStartButton();
 
+extern Rectangle StartButton;
+
 #endif

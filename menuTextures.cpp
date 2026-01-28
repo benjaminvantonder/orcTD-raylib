@@ -16,7 +16,9 @@ Rectangle StartButton = {truncf((1920 / 2) - (BUTTON_WIDTH / 2)), truncf((1080 /
 
 void drawStartButton() {
 
-    DrawRectangleRec(StartButton, WHITE);
+    DrawRectangleRec(StartButton, GRAY);
+
+    DrawText("Start!", truncf((1920 / 2) - (BUTTON_WIDTH / 2)), truncf((1080 / 2) + (BUTTON_HEIGHT * 1.5)), 100, BLACK); //void DrawText(const char *text, int posX, int posY, int fontSize, Color color);
 
 }
 

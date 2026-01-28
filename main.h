@@ -4,5 +4,6 @@
 #include "raylib.h"
 
 extern Color transparentColor;
+extern bool isMenu;
 
 #endif
