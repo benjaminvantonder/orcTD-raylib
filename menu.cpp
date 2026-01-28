@@ -35,7 +35,6 @@ void Menu::ButtonClicked() {
 
                 isMenu = false;
                 Game::loadTextures();
-                printf("Button was clicked");
 
 
             }
